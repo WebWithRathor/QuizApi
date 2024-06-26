@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    Questions : []
+    User:JSON.parse(localStorage.getItem('Quiz'))||[]
 }
 
 export const questionSlice = createSlice({
     name:'questions',
     initialState,
     reducers:{
-        Load:(state,action)=>{
-            state.Questions = action.payload;
-        },
+        LoadUser:(state,action)=>{
+            state.User = action.payload;
+        }
     }
 })
 
-export const { Load } = questionSlice.actions
+export const { LoadUser } = questionSlice.actions
 export default questionSlice.reducer;

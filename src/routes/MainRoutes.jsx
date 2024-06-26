@@ -2,7 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Layout from '../components/Layout'
 import Categories from '../components/Categories'
-import Questions from '../components/Questions'
+import Result from '../components/Result'
+import LoadingQuiz from '../components/LoadingQuiz'
 
 const MainRoutes = () => {
   return (
@@ -10,7 +11,8 @@ const MainRoutes = () => {
         <Routes>
             <Route path="/" element={<Layout />} />
             <Route path="/options" element={<Categories />} />
-            <Route path="/question/:id" element={<Questions />} />
+            <Route path="/question/:id" element={<LoadingQuiz/>} />
+            <Route path="/result" element={<Result />} />
         </Routes>
     </div>
   )
