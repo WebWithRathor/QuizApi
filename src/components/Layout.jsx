@@ -6,7 +6,6 @@ import { loadQuestion } from '../store/actions/questionAction'
 
 const Layout = () => {
   let ques = useSelector(state => state.questionSlice)
-  console.log(ques);
 const dispatch = useDispatch();
 
   return (
