@@ -10,9 +10,12 @@ export const questionSlice = createSlice({
     reducers:{
         LoadUser:(state,action)=>{
             state.User = action.payload;
+        },
+        emptyState:(state,action)=>{
+            state.User = [];
         }
     }
 })
 
-export const { LoadUser } = questionSlice.actions
+export const { LoadUser,emptyState } = questionSlice.actions
 export default questionSlice.reducer;
