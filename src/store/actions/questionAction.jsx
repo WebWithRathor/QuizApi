@@ -2,11 +2,12 @@ import Axios from "../../utils/axios";
 import { LoadUser, emptyState } from "../reducers/questionSlice"
 
 
-export const loadQuestion = (category) => async (dispatch, getstate) => {
+export const loadQuestion = (category,tag) => async (dispatch, getstate) => {
     localStorage.removeItem("Quiz");
     dispatch(emptyState());
-    let url = '/questions?apiKey=lxV8ZPP4zki8giVqV5pIGw7nZLhS48qwjqH9iThM&limit=10';
+    let url = `/questions?apiKey=lxV8ZPP4zki8giVqV5pIGw7nZLhS48qwjqH9iThM&limit=10`;
     if (category != 'random') url += `&category=${category}`;
+    if (tag) url += `&tag=${tag}`;
     let { data } = await Axios.get(url)
     const user = {
         category: category,
