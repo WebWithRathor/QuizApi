@@ -13,10 +13,13 @@ const Result = () => {
     }
  
   return (
-    <div className='flex p-7 w-full min-h-screen flex-col items-center justify-center gap-6'>
-      <img className='w-1/2 '  src="https://cdn-icons-png.flaticon.com/512/9436/9436106.png" alt="" />
-      <h1 className='text-center font-semibold'><span className='text-4xl mb-2 inline-block'>Hurray,</span><br/>You have completed the quiz.</h1>
-      <div className="row flex gap-4 items-center text-center">
+    <div className='flex p-7 w-full min-h-screen flex-col md:flex-row items-center justify-center gap-6'>
+      <div className="w-full md:w-1/3">
+      <img className='w-full'  src="https://cdn-icons-png.flaticon.com/512/9436/9436106.png" alt="" />
+      <h1 className='text-center mt-5 font-semibold'><span className='text-4xl mb-2 inline-block'>Hurray,</span><br/>You have completed the quiz.</h1>
+      </div>
+   <div className="w-full md:w-2/3 flex flex-col items-center gap-5">
+   <div className="row flex gap-4 items-center text-center">
         <div className="rounded-full h-24 flex items-center justify-center shrink-0 aspect-square shadow-inner text-[#283618] shadow-emerald-500/[.3]  bg-emerald-500/[.2] p-4 font-semibold">
           <h1 className='font-semibold'>{Correct} <br/> correct</h1>
         </div>
@@ -32,6 +35,7 @@ const Result = () => {
       <Link to="/"><button className='text-lg py-3 w-[70%] rounded text-white font-semibold bg-[#38a3a5]'>Done !</button></Link>
       </div>
       <Outlet/>
+   </div>
     
     </div>
   )
